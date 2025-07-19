@@ -1,0 +1,21 @@
+{
+  "name": "JavascriptKataTwo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc"
+  },
+  "devDependencies": {
+    "@stryker-mutator/mocha-runner": "^9.0.1",
+    "@types/chai": "^5.2.2",
+    "@types/mocha": "^10.0.10",
+    "@types/node": "^24.0.15",
+    "chai": "^5.2.1",
+    "mocha": "^11.7.1",
+    "nyc": "^17.1.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.5.3"
+  },
+  "private": true
+}
