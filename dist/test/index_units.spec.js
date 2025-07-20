@@ -26,11 +26,19 @@ describe('can do battle', () => {
         const battleResults = driver.battle(2, 1, 0);
         chai_1.assert.equal(battleResults, "zerg have won");
     });
-    // it('can enter two zerg and two terran and they do battle', () => {
-    //     const driver = new Driver();
-    //
-    //     const battleResults = driver.battle(2, 1, 0);
-    //
-    //     assert.equal(battleResults, "terran have won")
-    // });
+    it('can enter two zerg and two terran and they do battle', () => {
+        const driver = new src_1.default();
+        const battleResults = driver.battle(2, 2, 0);
+        chai_1.assert.equal(battleResults, "terran have won");
+    });
+    it('can enter two zerg and two zealot and they do battle', () => {
+        const driver = new src_1.default();
+        const battleResults = driver.battle(2, 0, 2);
+        chai_1.assert.equal(battleResults, "protos have won");
+    });
+    it('can enter two marine and two zealot and they do battle', () => {
+        const driver = new src_1.default();
+        const battleResults = driver.battle(0, 2, 2);
+        chai_1.assert.equal(battleResults, "protos have won");
+    });
 });
