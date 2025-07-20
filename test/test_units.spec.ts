@@ -1,5 +1,7 @@
 ﻿import {assert} from "chai";
-import {Marine, Zealot, Zergling} from '../src';
+import {Zergling} from "../src/units/zergling";
+import {Marine} from "../src/units/marine";
+import {Zealot} from "../src/units/zealot";
 
 describe('can do battle', () => {
     it('the vile zerg zergling will kill the epic terran marine', () => {
