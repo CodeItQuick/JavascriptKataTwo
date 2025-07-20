@@ -11,6 +11,11 @@ class Zergling {
             unit.hurt(1);
         }
     }
+    claw(unit) {
+        if (this.closeUnits.includes(unit)) {
+            unit.hurt(1);
+        }
+    }
     alive() {
         return this.hitpoints > 0;
     }
@@ -18,7 +23,15 @@ class Zergling {
         this.closeUnits.push(unit);
     }
     hurt(damage) {
-        this.hitpoints -= damage;
+        if (damage > 0) {
+            this.hitpoints -= damage;
+        }
+    }
+    hitpointBar() {
+        if (this.hitpoints === 1) {
+            return "full";
+        }
+        return "dead";
     }
 }
 exports.Zergling = Zergling;
@@ -30,13 +43,24 @@ class Marine {
         this.shoot(unit);
     }
     alive() {
-        return true;
+        return this.hitpoints > 0;
     }
     shoot(unit) {
         unit.hurt(1);
     }
     hurt(damage) {
-        this.hitpoints -= damage;
+        if (damage > 0) {
+            this.hitpoints -= damage;
+        }
+    }
+    hitpointBar() {
+        if (this.hitpoints === 2) {
+            return "full";
+        }
+        if (this.hitpoints === 1) {
+            return "half full";
+        }
+        return "dead";
     }
 }
 exports.Marine = Marine;
@@ -48,7 +72,7 @@ class Zealot {
         this.claw(unit);
     }
     alive() {
-        return true;
+        return this.hitpoints > 0;
     }
     claw(unit) {
         unit.hurt(2);
@@ -60,7 +84,10 @@ class Zealot {
         if (this.hitpoints === 2) {
             return "full";
         }
-        return "not full";
+        if (this.hitpoints === 1) {
+            return "half full";
+        }
+        return "dead";
     }
 }
 exports.Zealot = Zealot;

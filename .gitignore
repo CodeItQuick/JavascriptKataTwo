@@ -9,3 +9,6 @@ yarn-error.log*
 .pnp.js
 
 .vscode/*
+.stryker-tmp
+.nyc_output
+reports

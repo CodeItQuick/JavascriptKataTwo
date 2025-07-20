@@ -2,9 +2,12 @@
   "name": "JavascriptKataTwo",
   "version": "1.0.0",
   "description": "",
-  "main": "dist/index.js",
+  "main": "src/index.js",
   "scripts": {
-    "build": "tsc"
+    "build": "tsc",
+    "test": "mocha dist/test",
+    "test:coverage": "nyc --reporter=text mocha ./dist/test",
+    "test:stryker": "stryker run"
   },
   "devDependencies": {
     "@stryker-mutator/mocha-runner": "^9.0.1",
